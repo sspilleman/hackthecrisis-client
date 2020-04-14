@@ -1,0 +1,14 @@
+@import url("./site.css");
+
+#message {
+  max-width: 24rem;
+  margin: auto;
+  top: 4rem;
+  position: relative;
+}
+
+@media (max-width: 32em) {
+  #message {
+    max-width: calc(100vw - 8rem);
+  }
+}

@@ -1,0 +1,13 @@
+<import from="../pages/admin/admin"></import>
+<import from="../pages/welcome.html"></import>
+<import from="../value-converters/json"></import>
+
+<img class="header-logo" src="/static/images/logo-sander.svg" />
+
+<div class="container">
+    <au-viewport name="main" default="admin"></au-viewport>
+</div>
+
+<blockquote if.to-view="joke" class="joke" click.delegate="jokeService.loadNewJoke()">
+    ${joke.joke}
+</blockquote>

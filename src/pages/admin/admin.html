@@ -1,0 +1,66 @@
+<import from="../../value-converters/throttle"></import>
+<import from="../../value-converters/debounce"></import>
+
+<div id="admin" class="transparent">
+
+    <h1>Users <i if.bind="!newApplication" class="fas fa-plus-circle" click.delegate="addUser()"></i></h1>
+    <div repeat.for="user of users" id="${user.id}">
+        ${user.email} <span class="button-delete" click.delegate="deleteUser(user)">delete</span>
+        <div class="drop" drop.trigger="drop($event, user)" dragleave.trigger="dragleave($event, user)"
+            dragover.trigger="dragover($event, user)">
+            <div repeat.for="application of user.applications" class="button">${application.url} <i
+                    if.bind="user.email !=='sander@spilleman.nl'" class="fas fa-times-circle"></i></div>
+        </div>
+    </div>
+
+    <h1>Vakken <i class="fas fa-plus-circle" click.delegate="addVak()"></i></h1>
+    <span>Voeg toe aan Document:</span>
+    <div repeat.for="vak of vakken" class="button" id="${vak.id}" draggable="true"
+        dragstart.trigger="dragstart($event, vak)">${vak.vak} <i class="fas fa-times-circle"
+            click.delegate="deleteVak(vak)"></i></div>
+
+    <div if.bind="newVak" class="addForm">
+        <h1>Add Vak</h1>
+        <form role="form" submit.trigger="addVak(newVak)">
+            <div class="label">Vak</div>
+            <input type="text" autocomplete="off" value.bind="newVak.vak" placeholder="Type the name of the vak">
+            <br>
+            <input type="submit" class="button" value="Add Vak">
+            <input type="button" class="button" value="Cancel" click.delegate="cancelAdd()">
+            <strong if.bind="errorMessage" style="margin-top: 1rem; color: red;">${errorMessage}</strong>
+        </form>
+    </div>
+
+    <div if.bind="newUser" class="addForm">
+        <h1>Add User</h1>
+        <form role="form" submit.trigger="addUser(newUser)">
+            <div class="label">Email Address</div>
+            <input type="email" autocomplete="off" value.bind="newUser.email" placeholder="Email Address">
+            <br>
+            <div class="label">Password</div>
+            <input type="password" autocomplete="new-password" value.bind="newUser.password" placeholder="Password">
+            <br>
+            <input type="submit" class="button" value="Add User">
+            <input type="button" class="button" value="Cancel" click.delegate="cancelAdd()">
+            <strong if.bind="errorMessage" style="margin-top: 1rem; color: red;">${errorMessage}</strong>
+        </form>
+    </div>
+
+    <div if.bind="newApplication" class="addForm">
+        <h1>Add Application</h1>
+        <form role="form" submit.trigger="addApplication(newApplication)">
+            <div class="label">Name</div>
+            <input type="text" autocomplete="off" value.bind="newApplication.name" placeholder="Name">
+            <br>
+            <div class="label">URL</div>
+            <input type="text" autocomplete="off" value.bind="newApplication.url" placeholder="URL">
+            <br>
+            <input type="submit" class="button" value="Add Application">
+            <input type="button" class="button" value="Cancel" click.delegate="cancelAdd()">
+            <strong if.bind="errorMessage" style="margin-top: 1rem; color: red;">${errorMessage}</strong>
+        </form>
+    </div>
+
+    <!-- <pre>${users | json}</pre> -->
+
+</div>

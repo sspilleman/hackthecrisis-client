@@ -1,0 +1,15 @@
+<import from="../book-details/book-details"></import>
+<div id="book-list" class="transparent">
+    <div class="left">
+        <div class="header">Books</div>
+        <div class="list">
+            <div class="block" goto="book-details(${book.id})" repeat.for="book of books">
+                <div class="title">${book.title} (${book.year})</div>
+                <div class="authors">${book.authors.join(', ')}</div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <au-viewport name="book-details"></au-viewport>
+    </div>
+</div>

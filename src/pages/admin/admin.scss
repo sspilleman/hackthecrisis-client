@@ -1,0 +1,80 @@
+#admin {
+  pre {
+    font-size: smaller;
+    line-height: 1rem;
+  }
+
+  .button-delete {
+    display: inline-block;
+    color: white;
+    border: 0;
+    border-radius: 0.2rem;
+    margin-left: 0.5rem;
+    padding: 0 0.3rem;
+    background-color: red;
+  }
+
+  .button {
+    display: inline-block;
+    color: white;
+    border: 0;
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.5rem;
+    background-color: dodgerblue;
+  }
+
+  .drop-button {
+    display: inline-block;
+    color: white;
+    border: 0;
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.5rem;
+    background-color: rgb(156, 205, 254);
+  }
+}
+
+.drop {
+  margin-top: 0.5rem;
+  min-height: 4rem;
+  border: 1px dashed white;
+  padding: 1rem;
+  &.no-drag {
+    border-color: red;
+    background-color: rgb(255, 112, 112);
+  }
+  &.drag-ok {
+    border-color: rgb(138, 206, 1);
+    background-color: rgb(150, 189, 73);
+  }
+}
+
+.addForm {
+  width: 20rem;
+  margin-top: 1rem;
+  background-color: rgba(170, 255, 0, 0.5);
+  padding: 0.8rem 1rem;
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  h1 {
+    margin: 0;
+  }
+  .label {
+    margin-bottom: 0.5rem;
+    color: deeppink;
+    font-weight: 400;
+  }
+  input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid white;
+    border-radius: 0.2rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  input[type="submit"], input[type="button"] {
+    width: 8.3rem;
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,42 @@
+@import url("./site.css");
+
+#loginForm {
+  max-width: 24rem;
+  margin: auto;
+  top: 4rem;
+  position: relative;
+}
+
+@media (max-width: 32em) {
+  #loginForm {
+    max-width: calc(100vw - 8rem);
+  }
+}
+#loginForm > h1 {
+  /* top lr bottom */
+  margin: 0rem 0rem 1rem;
+}
+
+#loginForm > .label {
+  margin-bottom: 0.5rem;
+  color: deeppink;
+  font-weight: 400;
+}
+
+#loginForm > input {
+  font-size: medium;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 0.2rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+#loginForm > input[type="submit"] {
+  margin-top: 0.5rem;
+  color: white;
+  font-weight: 600;
+  background-color: dodgerblue;
+  box-shadow: 0 1px 1px rgba(50, 50, 50, 0.1), 0 2px 2px rgba(50, 50, 50, 0.1), 0 4px 4px rgba(50, 50, 50, 0.1),
+  0 8px 8px rgba(50, 50, 50, 0.1), 0 16px 16px rgba(50, 50, 50, 0.1);
+}

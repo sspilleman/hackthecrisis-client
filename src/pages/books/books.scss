@@ -1,0 +1,25 @@
+#book-list {
+  display: flex;
+  > .left {
+    flex: 0 0 20rem;
+    > .header {
+      font-size: xx-large;
+    }
+    > .list {
+      > .block {
+        color: rebeccapurple;
+        // text-decoration: none;
+        margin-bottom: 1rem;
+        &:hover {
+          color: cyan;
+        }
+        > .title {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  > .right {
+    flex: 1;
+  }
+}
